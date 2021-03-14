@@ -43,7 +43,7 @@ async def user(ctx, Member: discord.Member = None ):
 @bot.command()
 async def delete(ctx, amount= None):
          await ctx.channel.purge(limit = int(amount) + 1)
-         await ctx.send(embed= discord.Embed(description = (f'**Видалено {amount} повідомлень.**'), color=0xc582ff))
+         await ctx.send(embed= discord.Embed(description = (f'**Видалено {amount} повідомлення.**'), color=0xc582ff))
 
 @bot.event
 async def on_command_error(ctx, error):
