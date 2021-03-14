@@ -1,8 +1,8 @@
 import discord
 from discord.ext import commands
 import wikipedia
+import os
 
-token = 'yourtoken'
 bot = commands.Bot(command_prefix='Skyrim ')
 
 @bot.command()
@@ -88,4 +88,4 @@ async def on_ready():
     game = discord.Game(r"Skyrim help")
     await bot.change_presence(status=discord.Status.online, activity=game)
 
-bot.run(token)
+token = os.environ.get('BOT_TOKEN)
