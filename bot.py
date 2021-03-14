@@ -88,4 +88,5 @@ async def on_ready():
     game = discord.Game(r"Skyrim help")
     await bot.change_presence(status=discord.Status.online, activity=game)
 
-token = os.environ.get('BOT_TOKEN)
+token = os.environ.get('Bot_token')
+bot.run(str(token))
