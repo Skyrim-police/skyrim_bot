@@ -1,1 +1,1 @@
-# Україномовний discord bot на python
+# Україномовний discord bot на pythonn
