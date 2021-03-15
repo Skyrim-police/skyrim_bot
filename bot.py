@@ -76,6 +76,8 @@ async def wiki(ctx, *, text):
     emb.set_author(name= 'Повна стаття', url= new_page.url, icon_url= 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png')
 
     await ctx.send(embed=emb)
+  exeption Exception:
+    return await ctx.send('Стаття не знайдена')
 
 @bot.event
 async def on_ready():
