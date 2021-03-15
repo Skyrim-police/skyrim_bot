@@ -25,7 +25,6 @@ async def kick(ctx, member: discord.Member, *, reason: str = 'Причина в�
 async def user(ctx, Member: discord.Member = None ):
     if not Member:
         Member = ctx.author
-    roles = (role for role in Member.roles )
     emb = discord.Embed(title='Інформація про користувача'.format(Member.name), description=f"Приєднався: {Member.joined_at.strftime('%b %#d, %Y')}\n\n "
     f"Нікнейм: {Member.name}\n\n"
     
