@@ -62,12 +62,6 @@ async def unban( ctx, *, member = None ):
             user = ban_entry.user
             await ctx.guild.unban( user )
             await ctx.send(embed = discord.Embed(description = (f"**{member} розблокований**"),color=0xc582ff))
- 
-@bot.event
-async def on_message(message):
- if message:
-  print(f'{message.author}:{message.content}')
- await bot.process_commands(message)
 
 @bot.command()
 async def wiki(ctx, *, text):
