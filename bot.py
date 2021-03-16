@@ -5,7 +5,7 @@ import os
 
 bot = commands.Bot(command_prefix='Skyrim ')
 
-@bot.command(aliases=['бан', 'заблокуй'])
+@bot.command()
 @bot.command()
 @commands.has_permissions(ban_members=True)
 @commands.bot_has_permissions(ban_members=True)
@@ -14,7 +14,7 @@ async def ban(ctx, member: discord.Member, *, reason: str = 'Причина бл
     await ctx.send(embed = discord.
  Embed(description = (f"**{member} заблокований**"),color=0xc582ff))
 
-@bot.command(aliases=['кік']) 
+@bot.command() 
 @bot.command()
 @commands.has_permissions(kick_members=True)
 @commands.bot_has_permissions(kick_members=True)
@@ -23,7 +23,7 @@ async def kick(ctx, member: discord.Member, *, reason: str = 'Причина в�
     await ctx.send(embed = discord.
  Embed(description = (f"**{member} вигнаний**"),color=0xc582ff))
 
-@bot.command(aliases=['юзер','користувач'])
+@bot.command()
 @bot.command()
 async def user(ctx, Member: discord.Member = None ):
     if not Member:
@@ -42,7 +42,7 @@ async def user(ctx, Member: discord.Member = None ):
     emb.set_footer(icon_url= Member.avatar_url)
     await ctx.send(embed=emb)
 
-@bot.command(aliases=['видали'])
+@bot.command()
 @bot.command()
 async def delete(ctx, amount= None):
          await ctx.channel.purge(limit = int(amount) + 1)
@@ -53,7 +53,7 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound ):
         await ctx.send(embed = discord.Embed(description = f'** {ctx.author.name}, команди не існує**', color=0xc582ff))
    
-@bot.command(aliases=['розблокуй'])
+@bot.command()
 @bot.command()
 @commands.has_permissions( administrator = True )
 async def unban( ctx, *, member = None ):
@@ -66,7 +66,7 @@ async def unban( ctx, *, member = None ):
             await ctx.guild.unban( user )
             await ctx.send(embed = discord.Embed(description = (f"**{member} розблокований**"),color=0xc582ff))
 
-@bot.command(aliases=['вікі','вікіпедія'])
+@bot.command()
 @bot.command()
 async def wiki(ctx, *, text):
   try:    
