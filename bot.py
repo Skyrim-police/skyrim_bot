@@ -76,7 +76,7 @@ async def wiki(ctx, *, text):
     emb.set_author(name= 'Повна стаття', url= new_page.url, icon_url= 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png')
     await ctx.send(embed=emb)
   except Exception:
-    return await ctx.send('Уточніть статтю', delete_after=10)
+    return await ctx.send('Такої статті не існує', delete_after=10)
 
 @bot.event
 async def on_ready():
