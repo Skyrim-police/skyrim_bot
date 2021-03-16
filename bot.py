@@ -64,6 +64,7 @@ async def unban( ctx, *, member = None ):
 
 @bot.command()
 async def wiki(ctx, *, text):
+  try:    
     wikipedia.set_lang("uk")
     new_page = wikipedia.page(text)
     summ = wikipedia.summary(text)
@@ -73,8 +74,9 @@ async def wiki(ctx, *, text):
          color=0xc582ff
     )
     emb.set_author(name= 'Повна стаття', url= new_page.url, icon_url= 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png')
-
     await ctx.send(embed=emb)
+  except Exception:
+    return await ctx.send('Уточніть статтю', delete_after=10)
 
 @bot.event
 async def on_ready():
