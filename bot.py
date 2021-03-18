@@ -40,6 +40,7 @@ async def user(ctx, Member: discord.Member = None ):
     await ctx.send(embed=emb)
  
 @bot.command()
+@commands.has_permissions( administrator = True )
 async def delete(ctx, amount= None):
          await ctx.channel.purge(limit = int(amount) + 1)
          await ctx.send(embed= discord.Embed(description = (f'**Видалено {amount} повідомлення.**'), color=0xc582ff))
