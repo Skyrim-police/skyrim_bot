@@ -4,9 +4,6 @@ import wikipedia
 import os
 
 bot = commands.Bot(command_prefix='Skyrim ')
-bot = commands.Bot(command_prefix='S ')
-bot = commands.Bot(command_prefix='s ')
-bot = commands.Bot(command_prefix='skyrim ')
 
 @bot.command()
 @commands.has_permissions(ban_members=True)
