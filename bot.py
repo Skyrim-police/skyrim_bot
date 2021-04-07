@@ -84,5 +84,9 @@ async def on_ready():
     game = discord.Game(r"Skyrim help")
     await bot.change_presence(status=discord.Status.online, activity=game)
 
+@bot.command()
+async def invite(ctx): 
+ await ctx.send(embed = discord.Embed(description = ("**https://discord.com/api/oauth2/authorize?client_id=752836404362608641&permissions=0&scope=bot**"),color=0xc582ff))
+
 token = os.environ.get('Bot_token')
 bot.run(str(token))
