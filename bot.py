@@ -3,7 +3,7 @@ from discord.ext import commands
 import wikipedia
 import os
 
-bot = commands.Bot(command_prefix='Skyrim ')
+bot = commands.Bot(command_prefix='?')
 
 @bot.command()
 @commands.has_permissions(ban_members=True)
@@ -81,7 +81,7 @@ async def wiki(ctx, *, text):
 
 @bot.event
 async def on_ready():
-    game = discord.Game(r"Skyrim help")
+    game = discord.Game(r"?help")
     await bot.change_presence(status=discord.Status.online, activity=game)
 
 @bot.command()
