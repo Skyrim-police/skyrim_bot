@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 import wikipedia
+import googletrans
+from googletrans import Translator
 
 token = 'yourtoken'
 bot = commands.Bot(command_prefix='?')
@@ -84,4 +86,14 @@ async def on_ready():
     game = discord.Game(r"?help")
     await bot.change_presence(status=discord.Status.online, activity=game)
 
+@bot.command()
+async def trans(ctx, lang: str, r: str, *, text):
+  try:
+    t = Translator()
+    result = t.translate(text, src = lang, dest = r)
+    await ctx.send(embed = discord.
+  Embed(description = (f'**Переклад: \n{result.text}**'),color=0xc582ff))
+  except Exception:
+    return await ctx.send(embed = discord.Embed(description = (f"**Мова вказана не вірно**"),color=0xc582ff))   
+    
 bot.run(token)
